@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-Up Form</title>
+</head>
+<body>
+<main>
+    <section id="left-hero">
+        <div class="logo"><img src="white-wave.svg" class="icon">
+            <h1>WAVEZ</h1>
+        </div>
+    </section>
+
+
+    <section id="actual-form">
+        <div id="intro">
+            
+            <p>This isn't a real life online service. You know you need something like this in your life to help you realize your deepest dreams. <br>Sign up <em>now</em> to get started.</p>
+            <p>You know you want to.</p>
+        </div>
+
+        <div id="form-box">
+            <h2>Let's Do This!</h2>
+            <form action="https://typicode.com" method id="sign-up-form">
+               
+                <label for="Name">
+                    First Name <input type="text" name="user_first_name" id="first_name" />
+                </label>
+
+                <label for="Last Name">
+                    Last Name <input type="text" name="user_last_name" id="last_name" />
+                </label>
+
+                <label for="email">
+                    Email <input type="email" name="user_email" id="email">
+                </label>
+
+                <label for="phone_number">
+                    Phone Number <input type="tel" name="user_tel_number" id="user_tel_number" />
+                </label>
+
+                <label for="password">
+                    Password <input type="password" name="user_password" id="password" required>
+                </label>
+
+               <label for="confirm_password">
+                Confirm Password <input type="password" name="confirmation" id="confirmation" required>
+               </label>
+
+            
+            
+            </form>
+            
+        </div>
+           
+        <div id="caption">
+            <button type="submit" id="submit" class="pulse">Create Account</button>
+                <p>Already have an account? <a href="http://">Log In</a></p>
+            </div>
+    </section>
+</main>
+
+    <script>
+        //**
+        const form = document.getElementById('sign-up-form');
+       // form.noValidate=true;
+       // form.addEventListener('submit', validateForm);
+
+
+
+        const password = document.getElementById("password");
+
+        const confirmPassword = document.getElementById("confirmation");
+
+        const redAlert = document.createElement("p");
+        redAlert.textContent = "Passwords don't match!";
+
+        function validatePassword(){
+            if (password.value != confirmPassword.value){
+                confirmPassword.setCustomValidity("Passwords must match.");
+                confirmPassword.reportValidity();
+                confirmPassword.after(redAlert);
+            }else{
+                confirmPassword.setCustomValidity(" ");
+                redAlert.remove();
+            } 
+        }
+        
+       password.onchange = validatePassword;
+        confirmPassword.onchange = validatePassword;
+
+    </script>
+</body>
+</html>
