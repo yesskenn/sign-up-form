@@ -3,27 +3,38 @@
 
 
 form{
-
   max-width: 50vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
 
 }
+
+
 body{
   font-family: 'Work Sans', sans-serif;
   color: #333;
   margin: 0 auto;
  
- 
- 
+
 }
 
 main{
   display: grid;
-  grid-template-columns: 33vw 1fr;
+  grid-template-columns: minmax(250px, 33vw) 1fr;
   background-color: #f9fafb;
 }
+@media (max-width: 768px) {
+  main,
+  form {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
+  #left-hero{
+  width: 100%;
+
+}}
 
 #left-hero{
   width: 100%;
